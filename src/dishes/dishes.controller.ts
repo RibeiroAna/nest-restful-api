@@ -1,4 +1,10 @@
-import { Get, Post, Body, Controller, UsePipes} from '@nestjs/common';
+import {
+  Get,
+  Post,
+  Body,
+  Controller,
+  UsePipes,
+} from '@nestjs/common';
 import { CreateDishDto } from './dto/create-dish.dto';
 import { DishesService } from './dishes.service';
 import { Dish } from './interfaces/dish.interface';

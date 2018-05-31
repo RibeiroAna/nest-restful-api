@@ -20,12 +20,19 @@
     "@nestjs/common": "^5.0.0",
     "@nestjs/core": "^5.0.0",
     "@nestjs/microservices": "^5.0.0",
+    "@nestjs/passport": "^1.0.10",
     "@nestjs/testing": "^5.0.0",
     "@nestjs/websockets": "^5.0.0",
-    "fastify-formbody": "^2.0.0",
-    "reflect-metadata": "^0.1.12",
     "class-transformer": "^0.1.7",
     "class-validator": "^0.8.1",
+    "express-jwt": "^5.3.1",
+    "fastify-formbody": "^2.0.0",
+    "jsonwebtoken": "^8.2.2",
+    "jwks-rsa": "^1.2.1",
+    "passport": "^0.4.0",
+    "passport-http-bearer": "^1.0.1",
+    "passport-jwt": "^4.0.0",
+    "reflect-metadata": "^0.1.12",
     "rxjs": "^6.0.0",
     "typescript": "^2.6.2"
   },
@@ -35,7 +42,7 @@
     "@types/node": "^9.3.0",
     "@types/supertest": "^2.0.4",
     "jest": "^21.2.1",
-    "nodemon": "^1.14.1",
+    "nodemon": "^1.17.5",
     "prettier": "^1.11.1",
     "supertest": "^3.0.0",
     "ts-jest": "^21.2.4",
@@ -46,18 +53,5 @@
     "webpack": "^4.2.0",
     "webpack-cli": "^2.0.13",
     "webpack-node-externals": "^1.6.0"
-  },
-  "jest": {
-    "moduleFileExtensions": [
-      "js",
-      "json",
-      "ts"
-    ],
-    "rootDir": "src",
-    "testRegex": ".spec.ts$",
-    "transform": {
-      "^.+\\.(t|j)s$": "ts-jest"
-    },
-    "coverageDirectory": "../coverage"
   }
 }
