@@ -32,10 +32,10 @@ After starting your application, you can use the following commands to interact 
 curl -H 'Content-Type: application/json' -d '{
   "name": "Coke",
   "price": 3
-}' http://localhost:3000/dishes
+}' http://localhost:3000/items
 
 # fetch existing items
-curl http://localhost:3000/dishes
+curl http://localhost:3000/items
 ```
 
 If you try to insert items in your cart without authenticating, you will get a 401:
