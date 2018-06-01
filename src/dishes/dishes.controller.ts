@@ -8,7 +8,7 @@ import {
 import { CreateDishDto } from './dto/create-dish.dto';
 import { DishesService } from './dishes.service';
 import { Dish } from './interfaces/dish.interface';
-import { ValidationPipe } from '../common/pipes/validation.pipe.ts';
+import { ValidationPipe } from '../common/pipes/validation.pipe';
 
 @Controller('dishes')
 export class DishesController {

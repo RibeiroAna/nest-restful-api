@@ -7,17 +7,17 @@ An app for Auth0 blog's article.
 ## Installation
 
 ```bash
-$ npm install
+npm install
 ```
 
 ## Running the app
 
 ```bash
 # development
-$ npm run start
+npm run start
 
 # watch mode
-$ npm run start:dev
+npm run start:dev
 
 # production mode
 npm run start:prod
@@ -25,9 +25,21 @@ npm run start:prod
 
 ## Testing endpoints
 
-After running the commands above sucessfully, you may go to `localhost:3000/dishes` and get a empty list. To add elements to this list, you may type the following on the terminal:
+After starting your application, you can use the following commands to interact with the API:
 
 ```bash
-curl 'localhost:3000/dishes' -H "Content-Type: application/json" -d '{"name":"Coke", "price":3}'
+# insert new item
+curl -H 'Content-Type: application/json' -d '{
+  "name": "Coke",
+  "price": 3
+}' http://localhost:3000/dishes
+
+# fetch existing items
+curl http://localhost:3000/dishes
 ```
-(You may change the name and the price of the element)
+
+If you try to insert items in your cart without authenticating, you will get a 401:
+
+```bash
+curl -X POST http://localhost:3000/shopcart
+```
