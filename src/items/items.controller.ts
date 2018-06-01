@@ -4,11 +4,14 @@ import {
   Body,
   Controller,
   UsePipes,
+  UseGuards,
+  ReflectMetadata
 } from '@nestjs/common';
 import { CreateItemDto } from './create-item.dto';
 import { ItemsService } from './items.service';
 import { Dish } from './dish.interface';
 import { ValidationPipe } from '../common/validation.pipe';
+import { AdminGuard } from '../common/admin.guard';
 
 @Controller('items')
 export class ItemsController {
@@ -20,6 +23,7 @@ export class ItemsController {
   }
 
   @Post()
+  @UseGuards(new AdminGuard())
   @UsePipes(new ValidationPipe())
   async create(@Body() createItemDto: CreateItemDto) {
     this.itemsService.create(createItemDto);

@@ -13,7 +13,8 @@ import { AuthenticationMiddleware } from './common/authentication.middleware';
 export class AppModule implements NestModule {
     configure(consumer: MiddlewaresConsumer): void {
         consumer.apply(AuthenticationMiddleware).forRoutes(
-            { path: '/shopcart', method: RequestMethod.POST }
+            { path: '/shopcart', method: RequestMethod.POST },
+            { path: '/items', method: RequestMethod.POST }
     );
   }
 }
