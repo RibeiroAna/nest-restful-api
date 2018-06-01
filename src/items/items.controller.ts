@@ -5,11 +5,11 @@ import {
   Controller,
   UsePipes,
   UseGuards,
-  ReflectMetadata
+  ReflectMetadata,
 } from '@nestjs/common';
 import { CreateItemDto } from './create-item.dto';
 import { ItemsService } from './items.service';
-import { Dish } from './dish.interface';
+import { Item } from './item.interface';
 import { ValidationPipe } from '../common/validation.pipe';
 import { AdminGuard } from '../common/admin.guard';
 
