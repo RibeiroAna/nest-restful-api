@@ -1,6 +1,6 @@
 import {
   Controller,
-  Post
+  Post,
 } from '@nestjs/common';
 import { ShopcartService } from './shopcart.service';
 
@@ -9,7 +9,7 @@ export class ShopcartController {
   constructor(private readonly shopcartService: ShopcartService) {}
 
   @Post()
-  async find(): Promise<string> {
-    return this.shopcartService.find();
+  async addItem(): Promise<string> {
+    return this.shopcartService.addItem();
   }
 }
