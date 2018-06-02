@@ -1,11 +1,23 @@
-import { ExpressMiddleware, Injectable, NestMiddleware } from '@nestjs/common';
+import { Injectable, NestMiddleware, RequestMethod } from '@nestjs/common';
 import * as jwt from 'express-jwt';
 import { expressJwtSecret } from 'jwks-rsa';
+import { MiddlewareFunction } from '@nestjs/common/interfaces/middleware/middleware.interface';
+
+const securedRoutes = [
+  { path: '/shopcart', method: 'POST' },
+  { path: '/items', method: 'POST' },
+];
 
 @Injectable()
 export class AuthenticationMiddleware implements NestMiddleware {
-  resolve(): ExpressMiddleware {
+  resolve(): MiddlewareFunction {
     return (req, res, next) => {
+      const isSecured = securedRoutes.filter((route) => {
+        return route.path === req.baseUrl && route.method === req.method;
+      }).length > 0;
+
+      if (!isSecured) return next();
+
       jwt({
         secret: expressJwtSecret({
           cache: true,
