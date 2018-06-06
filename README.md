@@ -2,7 +2,7 @@
 
 ## Description
 
-An app written in Nest.js for Auth0 blog's article. It is a simple app of a restaurant`s menu, in this app any user can see the items of this menu, only identified users may add items to a shopcart and only an Admin user may add new items to the menu.
+An app written in Nest.js for Auth0 blog. It is a simple app of a restaurant's menu, in this app any user can see the items of this menu, only identified users may add items to a shopcart and only an Admin user may add new items to the menu.
 
 ## Installation
 
