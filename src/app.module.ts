@@ -6,15 +6,8 @@ import { ShopcartService } from './shopcart/shopcart.service';
 import { AuthenticationMiddleware } from './common/authentication.middleware';
 
 @Module({
-  imports: [],
+  imports: [AuthenticationMiddleware],
   controllers: [ItemsController, ShopcartController],
   providers: [ItemsService, ShopcartService],
 })
-export class AppModule implements NestModule {
-  configure(consumer: MiddlewaresConsumer): void {
-    consumer.apply(AuthenticationMiddleware).forRoutes(
-      { path: '/shopcart', method: RequestMethod.POST },
-      { path: '/items', method: RequestMethod.POST },
-    );
-  }
-}
+export class AppModule implements NestModule {}
